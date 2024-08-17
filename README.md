@@ -53,11 +53,85 @@ To make data exploration easy for the first iteration, I am just loading 10,00 r
 ## 3. Data Preparation
 ### Objective: 
 Prepare the data for modeling. This involves handling categorical variables, scaling numerical features, and splitting the data.
+As part of the process, I first did a check for Collinearity among Categorical Variables. Hare is an output --> 
 
-4. Modeling
-Objective: Build and evaluate models using different classifiers within pipelines.
+Based on tha above data, I decided to continue with the following categorical featuers
+['loan','housing','default','education','job', 'marital', 'education']
 
-5. Evaluation
-Objective: Compare the performance of the models using various metrics.
+### 4. Modeling
+#### Objective: 
+Build and evaluate models using different classifiers within pipelines using the following :
+
+classifiers = {
+    'K-Nearest Neighbors': KNeighborsClassifier(),
+    'Logistic Regression': LogisticRegression(max_iter=1000),
+    'Decision Tree': DecisionTreeClassifier(),
+    'Support Vector Machine': SVC(probability=True)
+}
+
+Here are the results -->
+
+
+
+### 5. Evaluation
+### Objective: 
+
+Compare the performance of the models using various metrics and below is a plot for the accuracy of each model -->
+
+#### 5.1 Cross-Validation
+Using cross-validation, we can further assess the model's generalization performance. Cross-validation provides a more reliable estimate of a model's performance on unseen data by averaging results over multiple folds.
+
+I did a 5 fold and a 10 fold cross validations
+
+Here are the results for 5 fold CV -->
+
+Evaluating K-Nearest Neighbors...
+Training Accuracy: 0.9242
+Test Accuracy: 0.8961
+Cross-Validation Accuracy (mean of 5 folds): 0.8949
+Model is performing consistently between training and test sets.
+
+Evaluating Logistic Regression...
+Training Accuracy: 0.9021
+Test Accuracy: 0.9014
+Cross-Validation Accuracy (mean of 5 folds): 0.9017
+Model is performing consistently between training and test sets.
+
+Evaluating Decision Tree...
+Training Accuracy: 1.0000
+Test Accuracy: 0.8750
+Cross-Validation Accuracy (mean of 5 folds): 0.8756
+Potential overfitting detected: Training accuracy significantly higher than test accuracy.
+
+Evaluating Support Vector Machine...
+Training Accuracy: 0.9151
+Test Accuracy: 0.9034
+Cross-Validation Accuracy (mean of 5 folds): 0.9035
+Model is performing consistently between training and test sets.
+
+### 6 Interpretation of Results
+Based on the comparision done above, Vector Machine Support is found to be the best as it came out on the top while model evaluation and cross validation.
+See data below for evidence -->
+
+For Vector Machine Support, Cross-Validation Accuracy (mean of 5 folds): 0.9035
+For Vector Machine Support - Accuracy: 0.8919
+
+#### 6.1 Visualize the classification methods
+
+We will only focus on Vector Machine Support for further analysis
+
+### 7 Features with significant impact
+To calculate feature importance using permutation importance with the Support Vector Machine (SVM) classifier, I will apply permutation importance to the trained SVM model to identify the most important features.
+
+Here are the results -->
+
+
+### Conclusion
+
+
+
+
+
+
 
 
