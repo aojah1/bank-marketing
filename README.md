@@ -86,11 +86,8 @@ classifiers = {
 
 Here are the results -->
 
-	Model	Accuracy	Precision	Recall	F1-Score
-0	K-Nearest Neighbors	0.8822	0.72	0.63	0.66
-1	Logistic Regression	0.8881	0.75	0.60	0.63
-2	Decision Tree	0.8528	0.66	0.66	0.66
-3	Support Vector Machine	0.8900	0.76	0.60	0.63
+<img width="515" alt="model_accuracy_comparision" src="https://github.com/user-attachments/assets/a000be3d-6e10-4c9b-9add-4457929823d1">
+
 
 ### 5. Evaluation
 ### Objective: 
@@ -140,43 +137,17 @@ For Vector Machine Support - Accuracy: 0.8919
 
 #### 6.1 Visualize the classification methods
 
-We will only focus on Vector Machine Support for further analysis
+We will only focus on Vector Machine Support for further analysis.
+
+<img width="551" alt="svm_age_duration" src="https://github.com/user-attachments/assets/ac86f9eb-0af7-46c9-8e11-23efb2ce7c9a">
+<img width="872" alt="svm_age_balance" src="https://github.com/user-attachments/assets/1a67c9b6-abd6-40bc-8a5b-43cbf8a090f6">
 
 ### 7 Features with significant impact
 To calculate feature importance using permutation importance with the Support Vector Machine (SVM) classifier, I will apply permutation importance to the trained SVM model to identify the most important features.
 
 Here are the results -->
 
-                     Feature  Importance
-3              num__duration    0.033429
-5                 num__pdays    0.010406
-6              num__previous    0.009189
-8           cat__housing_yes    0.002621
-2           num__day_of_week    0.001471
-0                   num__age    0.001471
-4              num__campaign    0.001006
-22       cat__job_unemployed    0.000652
-7              cat__loan_yes    0.000586
-17          cat__job_retired    0.000442
-18    cat__job_self-employed    0.000387
-14     cat__job_entrepreneur    0.000365
-13      cat__job_blue-collar    0.000276
-9           cat__default_yes    0.000144
-23              cat__job_nan    0.000011
-20          cat__job_student    0.000000
-15        cat__job_housemaid   -0.000033
-19         cat__job_services   -0.000111
-27   cat__education_tertiary   -0.000210
-11   cat__education_tertiary   -0.000210
-12        cat__education_nan   -0.000498
-28        cat__education_nan   -0.000498
-16       cat__job_management   -0.000509
-1               num__balance   -0.000553
-25       cat__marital_single   -0.000641
-10  cat__education_secondary   -0.000829
-26  cat__education_secondary   -0.000829
-21       cat__job_technician   -0.001028
-24      cat__marital_married   -0.001039
+<img width="395" alt="Screenshot 2024-08-17 at 6 46 11 PM" src="https://github.com/user-attachments/assets/9e8adb44-937b-41f9-a954-bf1fe72e675f">
 
 ### Conclusion
 
