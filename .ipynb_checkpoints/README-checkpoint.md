@@ -62,9 +62,20 @@ As part of the process, I first did a check for Collinearity among Categorical V
 Based on tha above data, I decided to continue with the following categorical featuers
 ['loan','housing','default','education','job', 'marital', 'education']
 
+
 ### 4. Modeling
 #### Objective: 
 Build and evaluate models using different classifiers within pipelines using the following :
+
+['num__age' 'num__balance' 'num__day_of_week' 'num__duration'
+ 'num__campaign' 'num__pdays' 'num__previous' 'cat__loan_yes'
+ 'cat__housing_yes' 'cat__default_yes' 'cat__education_secondary'
+ 'cat__education_tertiary' 'cat__education_nan' 'cat__job_blue-collar'
+ 'cat__job_entrepreneur' 'cat__job_housemaid' 'cat__job_management'
+ 'cat__job_retired' 'cat__job_self-employed' 'cat__job_services'
+ 'cat__job_student' 'cat__job_technician' 'cat__job_unemployed'
+ 'cat__job_nan' 'cat__marital_married' 'cat__marital_single'
+ 'cat__education_secondary' 'cat__education_tertiary' 'cat__education_nan']
 
 classifiers = {
     'K-Nearest Neighbors': KNeighborsClassifier(),
@@ -166,6 +177,7 @@ Here are the results -->
 26  cat__education_secondary   -0.000829
 21       cat__job_technician   -0.001028
 24      cat__marital_married   -0.001039
+
 ### Conclusion
 
 The goal was to build and evaluate several classification models to predict customer responses (e.g., whether a customer would subscribe to a term deposit) based on various features in the Bank Marketing dataset.
@@ -176,27 +188,9 @@ Factors such as day of the week you are calling in, age, job status, and default
 
 But the top three features that has Portuguese banking institution should target are - 
 
-
-1 - age (numeric)
-   2 - job : type of job (categorical: "admin.","unknown","unemployed","management","housemaid","entrepreneur","student",
-                                       "blue-collar","self-employed","retired","technician","services") 
-   3 - marital : marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed)
-   4 - education (categorical: "unknown","secondary","primary","tertiary")
-   5 - default: has credit in default? (binary: "yes","no")
-   6 - balance: average yearly balance, in euros (numeric) 
-   7 - housing: has housing loan? (binary: "yes","no")
-   8 - loan: has personal loan? (binary: "yes","no")
-#### related with the last contact of the current campaign:
-   9 - contact: contact communication type (categorical: "unknown","telephone","cellular") 
-  10 - day: last contact day of the month (numeric)
-  11 - month: last contact month of year (categorical: "jan", "feb", "mar", ..., "nov", "dec")
-  12 - duration: last contact duration, in seconds (numeric)
-#### other attributes:
-  13 - campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
-  14 - pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted)
-  15 - previous: number of contacts performed before this campaign and for this client (numeric)
-  16 - poutcome: outcome of the previous marketing campaign (categorical: "unknown","other","failure","success")
-
+1) has housing a loan
+2) type of job
+3) has credit in default
 
 
 
