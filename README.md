@@ -49,6 +49,10 @@ To make data exploration easy for the first iteration, I am just loading 10,00 r
 
   Output variable (desired target):
   17 - y - has the client subscribed a term deposit? (binary: "yes","no")
+  
+### 2.3 Features Exploration
+
+Plot categorical and numerical features data distribution
 
 ## 3. Data Preparation
 ### Objective: 
@@ -58,9 +62,20 @@ As part of the process, I first did a check for Collinearity among Categorical V
 Based on tha above data, I decided to continue with the following categorical featuers
 ['loan','housing','default','education','job', 'marital', 'education']
 
+
 ### 4. Modeling
 #### Objective: 
 Build and evaluate models using different classifiers within pipelines using the following :
+
+['num__age' 'num__balance' 'num__day_of_week' 'num__duration'
+ 'num__campaign' 'num__pdays' 'num__previous' 'cat__loan_yes'
+ 'cat__housing_yes' 'cat__default_yes' 'cat__education_secondary'
+ 'cat__education_tertiary' 'cat__education_nan' 'cat__job_blue-collar'
+ 'cat__job_entrepreneur' 'cat__job_housemaid' 'cat__job_management'
+ 'cat__job_retired' 'cat__job_self-employed' 'cat__job_services'
+ 'cat__job_student' 'cat__job_technician' 'cat__job_unemployed'
+ 'cat__job_nan' 'cat__marital_married' 'cat__marital_single'
+ 'cat__education_secondary' 'cat__education_tertiary' 'cat__education_nan']
 
 classifiers = {
     'K-Nearest Neighbors': KNeighborsClassifier(),
@@ -132,6 +147,36 @@ To calculate feature importance using permutation importance with the Support Ve
 
 Here are the results -->
 
+                     Feature  Importance
+3              num__duration    0.033429
+5                 num__pdays    0.010406
+6              num__previous    0.009189
+8           cat__housing_yes    0.002621
+2           num__day_of_week    0.001471
+0                   num__age    0.001471
+4              num__campaign    0.001006
+22       cat__job_unemployed    0.000652
+7              cat__loan_yes    0.000586
+17          cat__job_retired    0.000442
+18    cat__job_self-employed    0.000387
+14     cat__job_entrepreneur    0.000365
+13      cat__job_blue-collar    0.000276
+9           cat__default_yes    0.000144
+23              cat__job_nan    0.000011
+20          cat__job_student    0.000000
+15        cat__job_housemaid   -0.000033
+19         cat__job_services   -0.000111
+27   cat__education_tertiary   -0.000210
+11   cat__education_tertiary   -0.000210
+12        cat__education_nan   -0.000498
+28        cat__education_nan   -0.000498
+16       cat__job_management   -0.000509
+1               num__balance   -0.000553
+25       cat__marital_single   -0.000641
+10  cat__education_secondary   -0.000829
+26  cat__education_secondary   -0.000829
+21       cat__job_technician   -0.001028
+24      cat__marital_married   -0.001039
 
 ### Conclusion
 
@@ -139,7 +184,32 @@ The goal was to build and evaluate several classification models to predict cust
 
 My analysis found Support Vector Machine as the most accurate and efficient clasification model.
 
-Factors such as Job status seems to be the target personas while calling a prospect and convincing him/her for a term deposit in the first call.
+Factors such as day of the week you are calling in, age, job status, and defaulter has to be the target personas while calling a prospect and convincing him/her for a term deposit in the first call.
+
+But the top three features that has Portuguese banking institution should target are - 
+
+'housing','job', 'default','education',
+
+1 - age (numeric)
+   2 - job : type of job (categorical: "admin.","unknown","unemployed","management","housemaid","entrepreneur","student",
+                                       "blue-collar","self-employed","retired","technician","services") 
+   3 - marital : marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed)
+   4 - education (categorical: "unknown","secondary","primary","tertiary")
+   5 - default: has credit in default? (binary: "yes","no")
+   6 - balance: average yearly balance, in euros (numeric) 
+   7 - housing: has housing loan? (binary: "yes","no")
+   8 - loan: has personal loan? (binary: "yes","no")
+#### related with the last contact of the current campaign:
+   9 - contact: contact communication type (categorical: "unknown","telephone","cellular") 
+  10 - day: last contact day of the month (numeric)
+  11 - month: last contact month of year (categorical: "jan", "feb", "mar", ..., "nov", "dec")
+  12 - duration: last contact duration, in seconds (numeric)
+#### other attributes:
+  13 - campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
+  14 - pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted)
+  15 - previous: number of contacts performed before this campaign and for this client (numeric)
+  16 - poutcome: outcome of the previous marketing campaign (categorical: "unknown","other","failure","success")
+
 
 
 
