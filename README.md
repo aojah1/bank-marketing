@@ -81,39 +81,42 @@ Compare the performance of the models using various metrics and below is a plot 
 #### 5.1 Cross-Validation
 Using cross-validation, we can further assess the model's generalization performance. Cross-validation provides a more reliable estimate of a model's performance on unseen data by averaging results over multiple folds.
 
-I did a 5 fold and a 10 fold cross validations
+I did a 5 fold  cross validations using the following rules - 
+
+If the training accuracy is significantly higher than the test accuracy (e.g., by more than 10%), the model might be overfitting.
+If the test accuracy is higher than the training accuracy, the model might be underfitting (not capturing enough complexity).
 
 Here are the results for 5 fold CV -->
 
 Evaluating K-Nearest Neighbors...
-Training Accuracy: 0.9242
-Test Accuracy: 0.8961
-Cross-Validation Accuracy (mean of 5 folds): 0.8949
+Training Accuracy: 0.9153
+Test Accuracy: 0.8822
+Cross-Validation Accuracy (mean of 5 folds): 0.8870
 Model is performing consistently between training and test sets.
 
 Evaluating Logistic Regression...
-Training Accuracy: 0.9021
-Test Accuracy: 0.9014
-Cross-Validation Accuracy (mean of 5 folds): 0.9017
+Training Accuracy: 0.8922
+Test Accuracy: 0.8881
+Cross-Validation Accuracy (mean of 5 folds): 0.8919
 Model is performing consistently between training and test sets.
 
 Evaluating Decision Tree...
 Training Accuracy: 1.0000
-Test Accuracy: 0.8750
-Cross-Validation Accuracy (mean of 5 folds): 0.8756
+Test Accuracy: 0.8550
+Cross-Validation Accuracy (mean of 5 folds): 0.8553
 Potential overfitting detected: Training accuracy significantly higher than test accuracy.
 
 Evaluating Support Vector Machine...
-Training Accuracy: 0.9151
-Test Accuracy: 0.9034
-Cross-Validation Accuracy (mean of 5 folds): 0.9035
+Training Accuracy: 0.9020
+Test Accuracy: 0.8900
+Cross-Validation Accuracy (mean of 5 folds): 0.8928
 Model is performing consistently between training and test sets.
 
 ### 6 Interpretation of Results
 Based on the comparision done above, Vector Machine Support is found to be the best as it came out on the top while model evaluation and cross validation.
 See data below for evidence -->
 
-For Vector Machine Support, Cross-Validation Accuracy (mean of 5 folds): 0.9035
+For Vector Machine Support, Cross-Validation Accuracy (mean of 5 folds): 0.9020
 For Vector Machine Support - Accuracy: 0.8919
 
 #### 6.1 Visualize the classification methods
