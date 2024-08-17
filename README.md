@@ -6,10 +6,10 @@
 The goal is to predict whether a customer will subscribe to a term deposit (target variable) based on various features (e.g., age, job, balance). The bank wants to optimize its marketing strategy by focusing on customers most likely to subscribe.
 
 ### Key Questions:
-What are the target market segment for the Portuguese banking institution, and what shoud be customer retention policies
+What are the target market segments for the Portuguese banking institution, and what shoud be customer retention policies
 
 ### Success Criteria:
-Provide options to the Portuguese banking institution to optimize its marketing strategies, reduce costs, and increase the conversion rates of their marketing campaigns, thereby improving overall profitability
+Provide options to the Portuguese banking institution to optimize its marketing strategies, reduce costs, and increase the conversion rates of its marketing campaigns, thereby improving overall profitability.
 
 ## 2. Data Understanding
 ### Objective: 
@@ -52,12 +52,15 @@ To make data exploration easy for the first iteration, I am just loading 10,00 r
   
 ### 2.3 Features Exploration
 
-Plot categorical and numerical features data distribution
+Plot categorical and numerical features data distribution.
 
 ## 3. Data Preparation
 ### Objective: 
 Prepare the data for modeling. This involves handling categorical variables, scaling numerical features, and splitting the data.
 As part of the process, I first did a check for Collinearity among Categorical Variables. Hare is an output --> 
+
+![Correlation_Matrix](https://github.com/user-attachments/assets/d9237683-ff59-4373-a1be-7ccc868e2d49)
+
 
 Based on tha above data, I decided to continue with the following categorical featuers
 ['loan','housing','default','education','job', 'marital', 'education']
