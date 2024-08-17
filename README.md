@@ -71,7 +71,11 @@ classifiers = {
 
 Here are the results -->
 
-
+	Model	Accuracy	Precision	Recall	F1-Score
+0	K-Nearest Neighbors	0.8822	0.72	0.63	0.66
+1	Logistic Regression	0.8881	0.75	0.60	0.63
+2	Decision Tree	0.8528	0.66	0.66	0.66
+3	Support Vector Machine	0.8900	0.76	0.60	0.63
 
 ### 5. Evaluation
 ### Objective: 
@@ -130,6 +134,12 @@ Here are the results -->
 
 
 ### Conclusion
+
+The goal was to build and evaluate several classification models to predict customer responses (e.g., whether a customer would subscribe to a term deposit) based on various features in the Bank Marketing dataset.
+
+My analysis found Support Vector Machine as the most accurate and efficient clasification model.
+
+Factors such as Job status seems to be the target personas while calling a prospect and convincing him/her for a term deposit in the first call.
 
 
 
